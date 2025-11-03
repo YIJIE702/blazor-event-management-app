@@ -1,0 +1,63 @@
+@page "/register/{EventId:int?}"
+@using EventEase.Shared.Models
+@inject HttpClient Http
+@inject NavigationManager Nav
+
+<Shared.NavMenu />
+<div class="container">
+    <h3>Registration</h3>
+
+    <EditForm Model="registration" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div>
+            <label>Name</label>
+            <InputText @bind-Value="registration.Name" />
+            @if (string.IsNullOrWhiteSpace(registration.Name))
+            {
+                <div class="input-error">Name is required.</div>
+            }
+        </div>
+
+        <div>
+            <label>Email</label>
+            <InputText @bind-Value="registration.Email" />
+        </div>
+
+        <div>
+            <label>Notes</label>
+            <InputTextArea @bind-Value="registration.Notes" />
+        </div>
+
+        <button type="submit">Register</button>
+    </EditForm>
+</div>
+
+@code {
+    [Parameter] public int? EventId { get; set; }
+
+    private RegistrationModel registration = new RegistrationModel();
+
+    protected override void OnInitialized()
+    {
+        if (EventId.HasValue)
+        {
+            registration.EventId = EventId.Value;
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (string.IsNullOrWhiteSpace(registration.Name) || string.IsNullOrWhiteSpace(registration.Email))
+        {
+            return;
+        }
+
+        var resp = await Http.PostAsJsonAsync("/api/registrations", registration);
+        if (resp.IsSuccessStatusCode)
+        {
+            Nav.NavigateTo($"/attendance/{registration.EventId}");
+        }
+    }
+}

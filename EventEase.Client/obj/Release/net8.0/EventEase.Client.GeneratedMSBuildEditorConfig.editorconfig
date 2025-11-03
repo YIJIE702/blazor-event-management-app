@@ -1,0 +1,55 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EventEase.Client
+build_property.RootNamespace = EventEase.Client
+build_property.ProjectDir = C:\Users\User\Source\Repos\YIJIE702\blazor-event-management-app\EventEase.Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\User\Source\Repos\YIJIE702\blazor-event-management-app\EventEase.Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/Components/EventCard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFdmVudENhcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = SW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/Pages/Attendance.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXR0ZW5kYW5jZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/Pages/EventDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnREZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/Pages/NotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90Rm91bmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/Pages/Registration.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cmF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/YIJIE702/blazor-event-management-app/EventEase.Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

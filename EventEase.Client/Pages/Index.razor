@@ -1,0 +1,31 @@
+        @page "/"
+@using EventEase.Shared.Models
+@inject HttpClient Http
+
+<Shared.NavMenu />
+<div class="container">
+    <h2>EventEase — Events</h2>
+    <p>Browse upcoming events</p>
+
+    @if (events is null)
+    {
+        <p>Loading events...</p>
+    }
+    else
+    {
+        <Virtualize Items="events" ItemSize="120">
+            <ItemContent Context="ev">
+                <Components.EventCard Event="ev" />
+            </ItemContent>
+        </Virtualize>
+    }
+</div>
+
+@code {
+    private List<EventModel>? events;
+
+    protected override async Task OnInitializedAsync()
+    {
+        events = await Http.GetFromJsonAsync<List<EventModel>>("/api/events");
+    }
+}

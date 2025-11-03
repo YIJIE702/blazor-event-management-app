@@ -1,0 +1,43 @@
+@page "/attendance/{EventId:int?}"
+@using EventEase.Shared.Models
+@inject HttpClient Http
+
+<Shared.NavMenu />
+<div class="container">
+    <h3>Attendance</h3>
+
+    @if (registrations is null)
+    {
+        <p>Loading...</p>
+    }
+    else if (!registrations.Any())
+    {
+        <p>No registrations yet. You can <a href="/">browse events</a> or <a href="/register">register</a>.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var r in registrations)
+            {
+                <li>@r.Name (@r.Email) — Event @r.EventId</li>
+            }
+        </ul>
+    }
+</div>
+
+@code {
+    [Parameter] public int? EventId { get; set; }
+    private List<RegistrationModel>? registrations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (EventId.HasValue)
+        {
+            registrations = await Http.GetFromJsonAsync<List<RegistrationModel>>($"/api/registrations/{EventId.Value}");
+        }
+        else
+        {
+            registrations = new List<RegistrationModel>();
+        }
+    }
+}

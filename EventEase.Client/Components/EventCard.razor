@@ -1,0 +1,35 @@
+@using EventEase.Shared.Models
+
+<div class="card">
+    <h4>@Event.Name</h4>
+    <p><strong>Date:</strong> @Event.Date.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</p>
+    <p><strong>Location:</strong> @Event.Location</p>
+    <p>@Event.Description</p>
+
+    @if (Editable)
+    {
+        <hr />
+        <label>Name</label>
+        <InputText @bind-Value="Event.Name" />
+        <br />
+        <label>Date</label>
+        <InputDate @bind-Value="Event.Date" />
+        <br />
+        <label>Location</label>
+        <InputText @bind-Value="Event.Location" />
+        <br />
+    }
+
+    <div style="margin-top:8px;">
+        <a href="/event/@Event.Id">Details</a>
+        <span style="margin-left:8px;"><a href="/register/@Event.Id">Register</a></span>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public EventModel Event { get; set; } = new EventModel();
+
+    [Parameter]
+    public bool Editable { get; set; } = false;
+}
